@@ -109,69 +109,136 @@
 </head>
 <body>
 <?$APPLICATION->ShowPanel();?>
+<?
+// $APPLICATION->IncludeComponent(
+// 	"bitrix:photo.section",
+// 	"",
+// 	Array(
+// 		"ADD_SECTIONS_CHAIN" => "N",
+// 		"AJAX_MODE" => "N",
+// 		"AJAX_OPTION_ADDITIONAL" => "",
+// 		"AJAX_OPTION_HISTORY" => "N",
+// 		"AJAX_OPTION_JUMP" => "N",
+// 		"AJAX_OPTION_STYLE" => "Y",
+// 		"BROWSER_TITLE" => "-",
+// 		"CACHE_FILTER" => "N",
+// 		"CACHE_GROUPS" => "Y",
+// 		"CACHE_TIME" => "36000000",
+// 		"CACHE_TYPE" => "A",
+// 		"DETAIL_URL" => "",
+// 		"DISPLAY_BOTTOM_PAGER" => "N",
+// 		"DISPLAY_TOP_PAGER" => "N",
+// 		"ELEMENT_SORT_FIELD" => "sort",
+// 		"ELEMENT_SORT_ORDER" => "asc",
+// 		"FIELD_CODE" => array("ID", "NAME", "SORT", "PREVIEW_PICTURE", ""),
+// 		"FILTER_NAME" => "arrFilter",
+// 		"IBLOCK_ID" => "7",
+// 		"IBLOCK_TYPE" => "content",
+// 		"LINE_ELEMENT_COUNT" => "3",
+// 		"MESSAGE_404" => "",
+// 		"META_DESCRIPTION" => "-",
+// 		"META_KEYWORDS" => "-",
+// 		"PAGER_BASE_LINK_ENABLE" => "N",
+// 		"PAGER_DESC_NUMBERING" => "N",
+// 		"PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
+// 		"PAGER_SHOW_ALL" => "N",
+// 		"PAGER_SHOW_ALWAYS" => "N",
+// 		"PAGER_TEMPLATE" => ".default",
+// 		"PAGER_TITLE" => "Фотографии",
+// 		"PAGE_ELEMENT_COUNT" => "20",
+// 		"PROPERTY_CODE" => array("URL", ""),
+// 		"SECTION_CODE" => "",
+// 		"SECTION_ID" => $_REQUEST["SECTION_ID"],
+// 		"SECTION_URL" => "",
+// 		"SECTION_USER_FIELDS" => array("", ""),
+// 		"SET_LAST_MODIFIED" => "N",
+// 		"SET_STATUS_404" => "N",
+// 		"SET_TITLE" => "N",
+// 		"SHOW_404" => "N"
+// 	)
+// );
 
+?>
+
+<?$APPLICATION->IncludeComponent(
+    "bitrix:news.list",
+    "",
+    Array(
+        "ACTIVE_DATE_FORMAT" => "d.m.Y",
+        "ADD_SECTIONS_CHAIN" => "N",
+        "AJAX_MODE" => "N",
+        "AJAX_OPTION_ADDITIONAL" => "",
+        "AJAX_OPTION_HISTORY" => "N",
+        "AJAX_OPTION_JUMP" => "N",
+        "AJAX_OPTION_STYLE" => "Y",
+        "CACHE_FILTER" => "N",
+        "CACHE_GROUPS" => "Y",
+        "CACHE_TIME" => "36000000",
+        "CACHE_TYPE" => "A",
+        "CHECK_DATES" => "Y",
+        "DETAIL_URL" => "",
+        "DISPLAY_BOTTOM_PAGER" => "N",
+        "DISPLAY_DATE" => "Y",
+        "DISPLAY_NAME" => "Y",
+        "DISPLAY_PICTURE" => "Y",
+        "DISPLAY_PREVIEW_TEXT" => "Y",
+        "DISPLAY_TOP_PAGER" => "N",
+        "FIELD_CODE" => array("ID","NAME","SORT","PREVIEW_PICTURE",""),
+        "FILTER_NAME" => "",
+        "HIDE_LINK_WHEN_NO_DETAIL" => "N",
+        "IBLOCK_ID" => "8",
+        "IBLOCK_TYPE" => "content",
+        "INCLUDE_IBLOCK_INTO_CHAIN" => "N",
+        "INCLUDE_SUBSECTIONS" => "Y",
+        "MESSAGE_404" => "",
+        "NEWS_COUNT" => "20",
+        "PAGER_BASE_LINK_ENABLE" => "N",
+        "PAGER_DESC_NUMBERING" => "N",
+        "PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
+        "PAGER_SHOW_ALL" => "N",
+        "PAGER_SHOW_ALWAYS" => "N",
+        "PAGER_TEMPLATE" => ".default",
+        "PAGER_TITLE" => "Социальные сети",
+        "PARENT_SECTION" => "",
+        "PARENT_SECTION_CODE" => "",
+        "PREVIEW_TRUNCATE_LEN" => "",
+        "PROPERTY_CODE" => array("",""),
+        "SET_BROWSER_TITLE" => "N",
+        "SET_LAST_MODIFIED" => "N",
+        "SET_META_DESCRIPTION" => "Y",
+        "SET_META_KEYWORDS" => "N",
+        "SET_STATUS_404" => "N",
+        "SET_TITLE" => "N",
+        "SHOW_404" => "N",
+        "SORT_BY1" => "SORT",
+        "SORT_BY2" => "SORT",
+        "SORT_ORDER1" => "ASC",
+        "SORT_ORDER2" => "ASC",
+        "STRICT_SECTION_CHECK" => "N"
+    )
+);?><br>
+<br>
 <!-- start top and main menu -->
 <div class="main-menu">
     <div class="ornament">
         <div class="containit">
             <?$APPLICATION->IncludeComponent( "bitrix:main.include", "", Array( "COMPONENT_TEMPLATE" => ".default", "AREA_FILE_SHOW" => "file", "AREA_FILE_SUFFIX" => "inc", "EDIT_TEMPLATE" => "", "PATH" => SITE_TEMPLATE_PATH."/include_areas/logo.php" ) );?>
-
-            <div class="menu"><!-- navigation start -->
-                <div id="navigation">
-
-                    <ul class="sf-menu">
-                        <li class="current"><a href="index-roundabout.html" class="applyfont">Home</a>
-                            <ul>
-                                <li><a href="<?=SITE_TEMPLATE_PATH;?>/index-cycle.html">Home Normal</a></li>
-                                <li><a href="<?=SITE_TEMPLATE_PATH;?>/index-roundabout-autoplay.html">Home Roundabout Autoplay</a></li>
-                                <li><a href="index-roundabout.html">Home Roundabout</a></li>
-                                <li><a href="<?=SITE_TEMPLATE_PATH;?>/index-nivo-slider.html">Home Nivo Slider</a></li>
-                                <li class="last roundbottom"><a href="<?=SITE_TEMPLATE_PATH;?>/index-feature-carousel.html">Home Feature Carousel</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="<?=SITE_TEMPLATE_PATH;?>/gallery-grid.html" class="applyfont">Gallery</a>
-                            <ul>
-                                <li><a href="<?=SITE_TEMPLATE_PATH;?>/gallery-grid.html">Gallery Grid Filterable</a></li>
-                                <li><a href="<?=SITE_TEMPLATE_PATH;?>/gallery-list.html">Gallery List</a></li>
-                                <li><a href="<?=SITE_TEMPLATE_PATH;?>/gallery-grid-sidebar.html">Gallery Grid Sidebar</a></li>
-                                <li><a href="<?=SITE_TEMPLATE_PATH;?>/blank.html">Another Page</a><ul>
-                                        <li class="roundtop"><a href="<?=SITE_TEMPLATE_PATH;?>/blank.html">Risus malesuada mi</a></li>
-                                        <li><a href="<?=SITE_TEMPLATE_PATH;?>/blank.html">Fusce tincidunt nisl nec</a></li>
-                                        <li><a href="<?=SITE_TEMPLATE_PATH;?>/blank.html">Curabitur plac orci mi stincidunt</a></li>
-                                        <li class="last roundbottom"><a href="<?=SITE_TEMPLATE_PATH;?>/blank.html">Nec lorem mattis</a></li>
-                                    </ul>
-                                </li>
-                                <li class="last roundbottom"><a href="<?=SITE_TEMPLATE_PATH;?>/blank.html">Page With Stuff On It</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="<?=SITE_TEMPLATE_PATH;?>/faq.html" class="applyfont">FAQ</a></li>
-                        <li><a href="<?=SITE_TEMPLATE_PATH;?>/services-wide.html" class="applyfont">Services</a>
-                            <ul>
-                                <li><a href="<?=SITE_TEMPLATE_PATH;?>/services-sidebar.html">Services Sidebar</a></li>
-                                <li><a href="<?=SITE_TEMPLATE_PATH;?>/services-wide.html">Services Wide Big Icons</a></li>
-                                <li class="last roundbottom"><a href="<?=SITE_TEMPLATE_PATH;?>/services-wide-small.html">Services Wide Small Icons</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="<?=SITE_TEMPLATE_PATH;?>/blog-grid.html" class="applyfont">Blog</a>
-                            <ul>
-                                <li><a href="<?=SITE_TEMPLATE_PATH;?>/blog-grid.html">Blog Style Grid</a></li>
-                                <li><a href="<?=SITE_TEMPLATE_PATH;?>/blog-grid-noimage.html">Blog Style Grid No Image</a></li>
-                                <li><a href="<?=SITE_TEMPLATE_PATH;?>/blog-list.html">Blog Style List</a></li>
-                                <li class="last roundbottom"><a href="<?=SITE_TEMPLATE_PATH;?>/blog-list-noimage.html">Blog Style List No Image</a></li>
-                            </ul>
-
-                        </li>
-                        <li class="last"><a href="<?=SITE_TEMPLATE_PATH;?>/contact-half.html" class="applyfont">Contact</a>
-                            <ul>
-                                <li><a href="<?=SITE_TEMPLATE_PATH;?>/contact-half.html">Contact Style Halfed</a></li>
-                                <li class="last roundbottom"><a href="<?=SITE_TEMPLATE_PATH;?>/contact-wide.html">Contact Style Wide</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-
-                </div>
-                <!-- navigation end -->
-            </div>
+            <?$APPLICATION->IncludeComponent(
+                "bitrix:menu",
+                "top_menu",
+                Array(
+                    "ALLOW_MULTI_SELECT" => "N",
+                    "CHILD_MENU_TYPE" => "left",
+                    "DELAY" => "N",
+                    "MAX_LEVEL" => "2",
+                    "MENU_CACHE_GET_VARS" => array(0=>""),
+                    "MENU_CACHE_TIME" => "3600",
+                    "MENU_CACHE_TYPE" => "N",
+                    "MENU_CACHE_USE_GROUPS" => "Y",
+                    "ROOT_MENU_TYPE" => "left",
+                    "USE_EXT" => "Y"
+                )
+            );?>
             <div class="clear"></div>
         </div>
     </div>
