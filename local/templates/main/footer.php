@@ -58,7 +58,53 @@
                 </div>
             </div>
         </div>
-
+        <?$APPLICATION->IncludeComponent(
+            "bitrix:photo.section",
+            "",
+            Array(
+                "ADD_SECTIONS_CHAIN" => "N",
+                "AJAX_MODE" => "N",
+                "AJAX_OPTION_ADDITIONAL" => "",
+                "AJAX_OPTION_HISTORY" => "N",
+                "AJAX_OPTION_JUMP" => "N",
+                "AJAX_OPTION_STYLE" => "Y",
+                "BROWSER_TITLE" => "-",
+                "CACHE_FILTER" => "N",
+                "CACHE_GROUPS" => "Y",
+                "CACHE_TIME" => "36000000",
+                "CACHE_TYPE" => "A",
+                "DETAIL_URL" => "",
+                "DISPLAY_BOTTOM_PAGER" => "N",
+                "DISPLAY_TOP_PAGER" => "N",
+                "ELEMENT_SORT_FIELD" => "sort",
+                "ELEMENT_SORT_ORDER" => "asc",
+                "FIELD_CODE" => array("PREVIEW_PICTURE","","","","",""),
+                "FILTER_NAME" => "arrFilter",
+                "IBLOCK_ID" => "7",
+                "IBLOCK_TYPE" => "content",
+                "LINE_ELEMENT_COUNT" => "3",
+                "MESSAGE_404" => "",
+                "META_DESCRIPTION" => "-",
+                "META_KEYWORDS" => "-",
+                "PAGER_BASE_LINK_ENABLE" => "N",
+                "PAGER_DESC_NUMBERING" => "N",
+                "PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
+                "PAGER_SHOW_ALL" => "N",
+                "PAGER_SHOW_ALWAYS" => "N",
+                "PAGER_TEMPLATE" => ".default",
+                "PAGER_TITLE" => "Фотографии",
+                "PAGE_ELEMENT_COUNT" => "20",
+                "PROPERTY_CODE" => array("URL",""),
+                "SECTION_CODE" => "",
+                "SECTION_ID" => $_REQUEST["SECTION_ID"],
+                "SECTION_URL" => "",
+                "SECTION_USER_FIELDS" => array("",""),
+                "SET_LAST_MODIFIED" => "N",
+                "SET_STATUS_404" => "N",
+                "SET_TITLE" => "N",
+                "SHOW_404" => "N"
+            )
+        );?>
     </div>
 </div>
 
@@ -72,9 +118,9 @@
         <div class="social">
 
             <ul>
-                <li><a href="#"><img src="<?=SITE_TEMPLATE_PATH;?>/images/icons/icon-twitter.png" width="26" height="27" alt="" class="vm"/>Twitter</a></li>
+                <li><a href="#"><img src="https://corp.imgsmail.ru/media/files/vklogo.png" width="26" height="27" alt="" class="vm"/>VK</a></li>
                 <li><a href="#"><img src="<?=SITE_TEMPLATE_PATH;?>/images/icons/icon-facebook.png" width="26" height="25" alt="" class="vm"/>Facebook</a></li>
-                <li><a href="#"><img src="<?=SITE_TEMPLATE_PATH;?>/images/icons/icon-linkedin.png" width="26" height="26" alt="" class="vm"/>LinkedIn</a></li>
+                <li><a href="#"><img src="https://im0-tub-ru.yandex.net/i?id=ed50acede158adc7a2a860fe0f87dc59&n=13&exp=1" width="26" height="26" alt="" class="vm"/>Odnoklassniki</a></li>
                 <li><a href="#"><img src="<?=SITE_TEMPLATE_PATH;?>/images/icons/icon-rss.png" width="26" height="25" alt="" class="vm"/>Blog RSS</a></li>
             </ul>
         </div>
